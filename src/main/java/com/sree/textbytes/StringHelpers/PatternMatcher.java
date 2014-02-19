@@ -22,8 +22,7 @@ public class PatternMatcher
 	 * @return
      */
 
-	public static List<String> getMatches(String regex,String text,int group) 
-	{
+	public static List<String> getMatches(String regex,String text,int group) {
 		List<String> matchList = new ArrayList<String>();
 		Pattern pattern = Pattern.compile(regex,Pattern.DOTALL | Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(text);
@@ -42,8 +41,7 @@ public class PatternMatcher
 	 * @return
      */
 
-	public static String getMatch(String regex,String text,int group)
-	{
+	public static String getMatch(String regex,String text,int group) {
 		String matchedString = null;
 		Pattern pattern = Pattern.compile(regex,Pattern.DOTALL | Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(text);

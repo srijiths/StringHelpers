@@ -36,11 +36,9 @@ public class PropertyFileLoader
 	public void inilializeProperty(String fileName)
 	{
 		File propertyFile = new File(fileName);
-		if(propertyFile.exists())
-		{
+		if(propertyFile.exists()) {
 			logger.debug("Property file exists, "+propertyFile.getName());
-			try
-			{
+			try {
 				InputStream configStream = new FileInputStream(propertyFile);
 				properties.load(configStream);
 				setPropertyFileName(propertyFile.getName());
@@ -55,8 +53,7 @@ public class PropertyFileLoader
 			logger.debug("Property file loaded with "+propertyFile.getName());
 			
 		}
-		else
-		{
+		else {
 			logger.error("Property file does not exists , exiting "+propertyFile.getAbsolutePath());
 			properties = null;
 			return;
@@ -64,15 +61,13 @@ public class PropertyFileLoader
 	}
 	
 	/** get the property file name */
-	public String getPropertyFileName()
-	{
+	public String getPropertyFileName() {
 		return propertyFileName;
 	}
 	
 	/** Set the property file name 
 	 * @return */
-	public void setPropertyFileName(String fileName)
-	{
+	public void setPropertyFileName(String fileName) {
 		propertyFileName = fileName;
 	}
 

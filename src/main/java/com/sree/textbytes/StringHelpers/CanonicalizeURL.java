@@ -10,7 +10,7 @@ import java.net.URLDecoder;
  *
  */
 public class CanonicalizeURL {
-	public static String escapeIllegalURLCharacters(String url) throws Exception{
+	public static String escapeIllegalURLCharacters(String url) throws Exception {
 		String decodeUrl = URLDecoder.decode(url,"UTF-8");
 		URL urlString = new URL(decodeUrl);
 		URI uri = new URI(urlString.getProtocol(), urlString.getUserInfo(), urlString.getHost(), urlString.getPort(), urlString.getPath(), urlString.getQuery(), urlString.getRef());

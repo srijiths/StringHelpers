@@ -25,34 +25,28 @@ public class WordStats
 	 */
 	private List<String> stopWords = new ArrayList<String>();
 
-	public List<String> getStopWords() 
-	{
+	public List<String> getStopWords() {
 		return stopWords;
 	}
 
-	public void setStopWords(List<String> stopWords) 
-	{
+	public void setStopWords(List<String> stopWords) {
 		this.stopWords = stopWords;
 	}
 
-	public int getStopWordCount() 
-	{
+	public int getStopWordCount() {
 		return stopWordCount;
 	}
 
-	public void setStopWordCount(int stopWordCount) 
-	{
+	public void setStopWordCount(int stopWordCount) {
 		this.stopWordCount = stopWordCount;
 	}
 
-	public int getWordCount() 
-	{
-		return wordCount;
+	public int getWordCount() {
+			return wordCount;
 		
 	}
 
-	public void setWordCount(int wordCount) 
-	{
+	public void setWordCount(int wordCount) {
 		this.wordCount = wordCount;
 	}
 

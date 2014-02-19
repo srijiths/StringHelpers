@@ -2,6 +2,8 @@ package com.sree.textbytes.StringHelpers;
 
 import java.util.*;
 
+import com.sree.textbytes.StringHelpers.string;
+
 /**
  * Created By NLP Community
  * 
@@ -76,14 +78,12 @@ public class StopWords
   // the confusing pattern below is basically just match any non-word character excluding white-space.
   public static final StringReplacement PUNCTUATION = StringReplacement.compile("[^\\p{Ll}\\p{Lu}\\p{Lt}\\p{Lo}\\p{Nd}\\p{Pc}\\s]", string.empty);
 
-  public static String removePunctuation(String str) 
-  {
+  public static String removePunctuation(String str) {
 	  return PUNCTUATION.replaceAll(str);
   }
 
 
-  public static WordStats getStopWordCount(String content)
-  {
+  public static WordStats getStopWordCount(String content) {
 	  if (string.isNullOrEmpty(content)) return WordStats.EMPTY;
 
 	  WordStats ws = new WordStats();
@@ -110,6 +110,10 @@ public class StopWords
   
   public Set<String> getStopWords() {
 	  return this.STOP_WORDS;
+  }
+  
+  public static String removeStopWords(String str) {
+	  return str.replaceAll(STOP_WORDS.toString(), string.empty);
   }
 
 

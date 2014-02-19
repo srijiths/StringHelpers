@@ -46,8 +46,7 @@ public class ReplaceSequence
    * @param firstPattern The regex {@link Pattern pattern} string for the first replacement
    * @return a new instance
    */
-  public static ReplaceSequence create(String firstPattern) 
-  {
+  public static ReplaceSequence create(String firstPattern) {
 	  return create(firstPattern, string.empty);
   }
 
@@ -57,8 +56,7 @@ public class ReplaceSequence
    * @param replaceWith The {@link String} to replace matches of the specified pattern
    * @return a new instance
    */
-  public static ReplaceSequence create(String firstPattern, String replaceWith) 
-  {
+  public static ReplaceSequence create(String firstPattern, String replaceWith) {
 	  ReplaceSequence result = new ReplaceSequence(StringReplacement.compile(firstPattern, replaceWith));
 	  return result;
   }
@@ -68,8 +66,7 @@ public class ReplaceSequence
    * @param pattern The regex {@link Pattern pattern} {@link String} for this replacement
    * @return this instance of itself for use in a builder pattern
    */
-  public ReplaceSequence append(String pattern) 
-  {
+  public ReplaceSequence append(String pattern) {
 	  return append(pattern, string.empty);
   }
 
@@ -79,8 +76,7 @@ public class ReplaceSequence
    * @param replaceWith The {@link String} to replace matches of the specified pattern
    * @return this instance of itself for use in a builder pattern
    */
-  public ReplaceSequence append(String pattern, String replaceWith)
-  {
+  public ReplaceSequence append(String pattern, String replaceWith) {
 	  replacements.add(StringReplacement.compile(pattern, replaceWith));
 	  return this;
   }
@@ -90,11 +86,9 @@ public class ReplaceSequence
    * @param input the {@link String} to apply all of the replacements to
    * @return the resulting {@link String} after all replacements have been applied
    */
-  public String replaceAll(String input) 
-  {
+  public String replaceAll(String input) {
 	  if (string.isNullOrEmpty(input)) return string.empty;
-	  for (StringReplacement rp : replacements) 
-	  {
+	  for (StringReplacement rp : replacements) {
 		  input = rp.replaceAll(input);
 	  }
     return input;
@@ -102,8 +96,7 @@ public class ReplaceSequence
 
   private List<StringReplacement> replacements = new ArrayList<StringReplacement>();
 
-  private ReplaceSequence(StringReplacement pair) 
-  {
+  private ReplaceSequence(StringReplacement pair) {
 	  replacements.add(pair);
   }
 
